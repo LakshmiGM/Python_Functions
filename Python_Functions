@@ -1,0 +1,21 @@
+import re
+
+def ptrnsrch(file, srchstr, repstr):  #('pwd2.txt', srchstr='pwd', repstr='pwd1'):
+        f1=open(file, 'r')
+        str=f1.readline()
+
+        while(f1.readline() <> ""):
+
+                str=re.sub(srchstr, repstr, str)
+                f2=open('output.txt', 'a')
+                f2.write(str)
+                str=f1.readline()
+        f1.close()
+        f2.close()
+
+
+file=input('enter file name\n')
+srchstr=input('enter the string to search\n')
+repstr=input('enter the string which replacement string\n')
+f2=ptrnsrch(file, srchstr, repstr)
+
